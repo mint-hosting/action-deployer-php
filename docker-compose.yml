@@ -12,4 +12,4 @@ services:
     volumes:
       - /my_local_path:/github/workspace
       - /my_local_path/id_rsa:/data_dev/id_rsa
-    command: deploy prod
+    command: deploy production
