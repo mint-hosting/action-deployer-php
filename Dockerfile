@@ -22,11 +22,6 @@ RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
 
-RUN curl -L https://getcomposer.org/composer-stable.phar > /usr/local/bin/composer \
-    && chmod +x /usr/local/bin/composer
-
-RUN composer require deployer/recipes --dev
-
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
