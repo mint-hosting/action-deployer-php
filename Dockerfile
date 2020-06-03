@@ -23,7 +23,7 @@ RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /us
     && chmod +x /usr/local/bin/dep
 
 RUN curl -L https://getcomposer.org/composer-stable.phar > /usr/local/bin/composer \
-    && chmod +x /usr/local/bin/composer
+    && chmod +x /usr/local/bin/composer 
 
 COPY entrypoint.sh /entrypoint.sh
 
