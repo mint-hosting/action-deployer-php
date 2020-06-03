@@ -1,7 +1,7 @@
 FROM php:7.4-cli-alpine
 
-LABEL "repository" = "https://github.com/musps/action-deployer-php"
-LABEL "homepage" = "https://github.com/musps/action-deployer-php"
+LABEL "repository" = "https://github.com/mint-hosting/action-deployer-php"
+LABEL "homepage" = "https://github.com/mint-hosting/action-deployer-php"
 
 LABEL "com.github.actions.name"="Action - Deployer php"
 LABEL "com.github.actions.description"="Use your Deployer PHP script with your github action workflow."
@@ -19,8 +19,8 @@ RUN apk update --no-cache \
 # Change default shell to bash (needed for conveniently adding an ssh key)
 RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
-RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer \
-    && chmod +x /usr/local/bin/deployer
+RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/dep \
+    && chmod +x /usr/local/bin/dep
 
 COPY entrypoint.sh /entrypoint.sh
 
